@@ -2,12 +2,12 @@ version: 0.0
 os: linux
 files:
  - source: /
-   destination: /home/ubuntu/wisest-backend/Wisest/
+   destination: /home/ubuntu/wisest-backend/
 hooks:
   AfterInstall:
-   - location: install_app_dependencies
+   - location: start_server
      timeout: 300
-     runas: root
+     runas: ubuntu
   ApplicationStart:
    - location: start_server
      timeout: 300
