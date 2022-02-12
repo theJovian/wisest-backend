@@ -46,5 +46,5 @@ jobs:
             --application-name wisest \
             --deployment-group-name wisestGroup \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --file-exists-behaviour overwrite \
+            --file-exists-behavior overwrite \
             --github-location repository=${{ github.repository }},commitId=${{ github.sha }}          
