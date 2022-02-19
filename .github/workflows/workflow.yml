@@ -24,7 +24,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: eu-west-3
 
   continuous-deployment:
     runs-on: ubuntu-latest
@@ -37,14 +37,14 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: eu-west-3
      # Step 2
       - name: Create CodeDeploy Deployment
         id: deploy
         run: |
           aws deploy create-deployment \
-            --application-name wisest-v2 \
-            --deployment-group-name wisest-deployment-v2 \
+            --application-name wisest \
+            --deployment-group-name wisest-deployment \
             --deployment-config-name CodeDeployDefault.OneAtATime \
             --file-exists-behavior OVERWRITE \
             --github-location repository=${{ github.repository }},commitId=${{ github.sha }}          
