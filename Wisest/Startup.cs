@@ -37,6 +37,7 @@ namespace Wisest
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
             app.UseStaticFiles();
 
             app.UseRouting();
