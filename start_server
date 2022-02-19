@@ -1,3 +1,6 @@
 #!/bin/bash
-cd /home/ubuntu/wisest-backend/Wisest/
-dotnet run&
+cd /home/ubuntu/wisest-backend/
+dotnet publish
+sudo rm -r /var/netcore/*
+sudo cp -a ~/wisest-backend/Wisest/bin/Debug/netcoreapp3.1/publish/. /var/netcore/
+sudo systemctl restart ServiceFile
